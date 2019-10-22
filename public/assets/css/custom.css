@@ -1,0 +1,587 @@
+.categoria-item{
+    position: relative;
+}
+
+.categoria-item .categoria{
+    padding: 20px 15px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background: rgba(85,204,204,0.8);
+}
+
+.categoria-item .block1-name, 
+.categoria-item .block1-txt, 
+.categoria-item.block1-info{
+    color: #fff;
+}
+
+.categoria-item .block1-txt:hover{
+    background: transparent;
+}
+
+.categoria-item .block1-txt:hover .block1-name, .block1-txt:hover .block1-info{
+    color: #fff;
+}
+
+.section-pedido{
+    
+    padding-top: 100px;
+}
+
+.Datos_de_entrega h5{
+    font-family: Poppins-Bold;
+    font-size: 20px;
+    line-height: 1.3;
+    text-transform: uppercase;
+    color: #333;
+    padding-bottom: 30px;
+}
+
+.check-envio input{
+    display: inline-block;
+}
+
+.item-formulario{
+    padding-top:15px;     
+
+} 
+.cuadro-costo{
+    background: #f0f0f0;
+    padding: 15px 20px;
+    border-radius: 5px;
+}
+
+.cuadro-costo ul{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    list-style: none;
+    
+}
+
+.cuadro-costo ul li{
+    display:table;
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+.cuadro-costo ul li p{
+    display: table-cell;
+    
+}
+
+.cuadro-costo ul li p:last-child{
+    text-align: right;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.cuadro-costo ul li p.boldPrecio{
+    text-align: right;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.cuadro-costo a{
+    width: 100%;
+    margin-top: 15px;
+}
+
+.cuadro-costo ul li p.total{
+    font-size: 20px;
+     font-weight: 800;   
+}
+
+.datos-adicionales{
+    padding-top: 30px;
+}
+
+.check-confirmacion{
+     padding-top: 30px;
+}
+
+.check-confirmacion input{
+    display: inline-block;
+}
+
+.metodoDePago{
+    padding-top: 30px;
+}
+
+.check-envio{
+    display: inline-block;
+    padding-bottom: 30px;
+}
+
+
+/* registro */
+
+:root {
+  --input-padding-x: 1.5rem;
+  --input-padding-y: .75rem;
+}
+
+
+
+.card-signin {
+  border: 0;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin: 80px;    
+    
+}
+
+.bloque-registro{
+margin-top: 90px !important;     
+}
+
+.card-signin .card-title {
+  margin-bottom: 2rem;
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+.card-signin .card-img-left {
+  width: 45%;
+  /* Link to your background image using in the property below! */
+  background: scroll center url(/assets/images/chicaCuenta.jpg);
+  background-size: cover;
+}
+
+.card-signin .img-loginAdmin {
+  width: 45%;
+  /* Link to your background image using in the property below! */
+  background: scroll center url(/assets/images/administrador.jpg);
+  background-size: cover;
+}
+
+.card-signin .imagen-recuperarContra {
+  width: 45%;
+  /* Link to your background image using in the property below! */
+  background: scroll center url(/assets/images/candado.jpg);
+  background-size: cover;
+}
+
+.card-signin .card-body {
+  padding: 2rem;
+}
+
+.form-signin {
+  width: 100%;
+}
+
+.form-signin .btn {
+  font-size: 80%;
+  border-radius: 5rem;
+  letter-spacing: .1rem;
+  font-weight: bold;
+  padding: 1rem;
+  transition: all 0.2s;
+}
+
+.form-label-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.form-label-group input {
+  height: auto;
+  border-radius: 2rem;
+}
+
+.form-label-group>input,
+.form-label-group>label {
+  padding: var(--input-padding-y) var(--input-padding-x);
+}
+
+.form-label-group>label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  /* Override default `<label>` margin */
+  line-height: 1.5;
+  color: #495057;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  transition: all .1s ease-in-out;
+}
+
+.form-label-group input::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input:-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::-moz-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::placeholder {
+  color: transparent;
+}
+
+.form-label-group input:not(:placeholder-shown) {
+  padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
+  padding-bottom: calc(var(--input-padding-y) / 3);
+}
+
+.form-label-group input:not(:placeholder-shown)~label {
+  padding-top: calc(var(--input-padding-y) / 3);
+  padding-bottom: calc(var(--input-padding-y) / 3);
+  font-size: 12px;
+  color: #777;
+}
+
+.btn-google {
+  color: white;
+  background-color: #ea4335;
+}
+
+.card-body h6{
+    padding-bottom:30px;
+    text-align: center;
+}
+
+
+
+.container.bloque-detalle{
+    padding-top: 100px;    
+}
+
+.body {
+	margin-top: 20px;
+}
+
+.titulo-detalle{
+    
+    
+}
+/* Fin registro */
+
+
+/*------------------------------------------------------------------
+[ Modal login ]*/
+.modal-login-header {
+  position: fixed;
+  z-index: 2000;
+  width: 100%;
+  height: 100%;
+  bottom: 101%;
+  left: 0;
+  background-color: rgba(255,255,255,0.9);
+  padding: 50px 15px 100px 15px;
+}
+
+.show-modal-login {
+  bottom: 0;
+}
+
+.container-login-header {
+  width: auto;
+  max-width: 100%;
+  position: relative;
+}
+
+/*---------------------------------------------*/
+.btn-hide-modal-login {
+  position: absolute;
+  padding: 5px;
+  right: 0;
+  top: -45px;
+  opacity: 0.8;
+}
+
+.btn-hide-modal-login:hover {
+  opacity: 1;
+}
+
+.wrap-login-header {
+  width: 300px;
+  border: 2px solid #e6e6e6;
+  background: #fff;
+}
+
+/*---------------------------------------------*/
+
+
+.wrap-login-header{
+    padding: 15px;
+}
+
+.wrap-login-header .options{
+    margin: 0;
+    width: 100%;
+    display: table;
+    padding: 0;
+    padding-top: 10px;
+    
+
+}
+
+.wrap-login-header .options li{
+    display: table-cell;
+}
+
+.wrap-login-header .options li a{
+    display: block;
+    color: #333;
+}
+
+.wrap-login-header .options li a.last{
+    text-align: right;
+}
+
+.wrap-login-header .title{
+    width: 100%;
+    text-align: center;
+}
+
+.wrap-login-header .form-group{
+    width: 100%;
+}
+
+.wrap-login-header input {
+    width: 100%;
+  font-family: Poppins-ExtraLight;
+  color: #333;
+  padding: 10px 15px;
+  width: 100%;
+    border: 1px solid #555;
+  background-color: transparent;
+}
+
+.wrap-login-header button {
+    padding: 10px 0;
+  color: #333;
+  width: 100%;
+  background: #222;
+  color: #fff;
+}
+
+.wrap-login-header button:hover {
+  color: #fff;
+}
+
+/*---------------------------------------------*/
+@media (max-width: 767px) {
+  .wrap-login-header input,
+  .wrap-login-header button {
+    font-size: 30px;
+  }
+
+  .wrap-login-header {
+    height: 90px;
+    display: none;  
+  }
+}
+
+@media (max-width: 575px) {
+  .wrap-login-header input,
+  .wrap-login-header button {
+    font-size: 20px;
+  }
+      
+  .wrap-login-header button {
+    width: 40px;
+  }
+
+  .wrap-login-header {
+    height: 80px;
+  }
+}
+
+.titulo-detalle h5{
+    font-family: Poppins-Bold;
+    font-size: 20px;
+    line-height: 1.3;
+    text-transform: uppercase;
+    color: #333;
+    padding-bottom: 0px;
+}
+
+.panel-body div.producto-centrado{
+    padding-top: 20px;
+}
+
+.panel-body div.precio-piezas-centrado{
+    padding-top: 20px;
+}
+.panel-body div.precio h6{
+    padding-top: 10px;
+    font-size: 18px;
+}
+
+
+
+.usuario-sesion{
+    position: relative;
+}
+
+.usuario-sesion .desplegable{
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    position: absolute;
+    border-radius: 5px;
+    left: 0;
+    padding: 10px 15px;
+    top: calc(100% + 8px);
+    border: 1px solid #ddd;
+    background: #fff;
+}
+
+.usuario-sesion .desplegable li{
+    padding: 5px 0;
+}
+
+.usuario-sesion .desplegable li a{
+    text-decoration: none;
+    color: #222;
+    padding: 5px 0;
+}
+
+.usuario-sesion:hover .desplegable{
+    visibility: visible;
+    opacity: 1;
+}
+
+.titulos-servicios h3{
+    font-weight: 700;
+    padding-top: 10px;
+    font-size: 30;
+}
+
+.titulo-nosotros h2{
+    font-weight: 700;
+    font-size: 50;
+    color: darkorange;
+    
+}
+
+.titulo-servicios h2{
+    font-weight: 700;
+    font-size: 50;
+    color: darkorange;
+    
+}
+
+h3.titulo-movil {
+    font-weight: 700!important;
+    font-size: 50!important;
+    color: darkorange!important;
+    
+}
+
+.efecto-deslizante{
+    visibility: visible;
+    animation-delay: 0.1s;
+    animation-name: fadeInRight;
+    
+}
+
+button.color-hover:hover{
+    color:darkorange;
+    
+}
+i.color-hover-carrito::before{
+color:deepskyblue;
+    
+}
+
+i.color-hover-carrito:after{
+    color:deepskyblue;
+    
+}
+
+a.color-verProducto:hover{
+    color:white;
+    background-color: deepskyblue;
+}
+
+input.color-input-newsletter{
+    background-color: white;
+    border-radius: 5px;
+    color: dimgray;
+}
+
+div.conf-texto-nosotros{
+    text-align: center;
+}
+
+conf-boton-carrito a:hover{
+    color:darkorange;
+}
+
+button.color-boton-agregar{
+    background-color:deepskyblue;     
+}
+
+button.color-boton-agregar:hover{
+    background-color:darkorange;     
+}
+
+footer.footer{
+    padding:20px; 
+    padding-bottom: 5px;
+}
+footer.footer li{
+padding: 3px;    
+}
+div.direccion-footer{
+    text-align: left;
+}
+
+div.columnas-footer h4{
+    padding-bottom: 0px;
+    margin-bottom: 10px;
+    
+}
+div.columnas-footer div{
+    padding-bottom: 10px;
+}
+div.icono-paypal-footer{
+    padding: 5px;
+}
+div.icono-paypal-footer div{
+     padding: 5px;
+}
+div.direccion-footer-2{
+    padding-top: 35px;
+    text-align: left;
+}
+div.contenedro-footer{
+    margin: auto;
+    padding: 0;
+}
+p.parrafo-direccion{    
+}
+div.redes-footer{
+    padding: 3px;
+}
+div.newsletter-footer button{
+    display: inline;
+}
+div.newsletter-footer input{
+    text-align: center;    
+}
+
+    
+
+
+
+
+
+
+
