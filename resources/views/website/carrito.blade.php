@@ -17,9 +17,10 @@
 									<th class="column-4">Cantidad</th>
 									<th class="column-5">Total</th>
 								</tr>
+						
                             @foreach(\App\Models\Carrito::myCart()->get() as $producto)
 								<tr class="table_row">
-								
+
 									<td class="column-1">
 										<div class="how-itemcart1">
 											<img src="{{ $producto->articulo->imagen }}" alt="{{ $producto->articulo->nombre }}">
@@ -70,8 +71,8 @@
 								</span>
 							</div>
 						</div>
-                  
-                        
+
+
                         <div class="flex-w flex-t bor12 p-t-27 p-b-13">
 							<div class="size-208">
 								<span class="stext-110 cl2">
@@ -86,7 +87,7 @@
 							</div>
 						</div>
 
-         
+
 						<div class="flex-w flex-t p-t-27 p-b-33">
 							<div class="size-208">
 								<span class="mtext-101 cl2">
@@ -100,8 +101,8 @@
 								</span>
 							</div>
 						</div>
-                        
-                        
+
+
 
 						<a href="/pedido" class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
 							Comprar

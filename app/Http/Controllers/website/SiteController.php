@@ -17,21 +17,21 @@ use Illuminate\Support\Facades\Validator;
 class SiteController extends Controller
 {
     function index(){
-        
+
         $categorias = Categoria::get();
-        
+
         //
         //Categoria::where("nombre", "like", "sadiujk")->get();
-        
+
         return view("website.home",[
             "categorias" => $categorias
-            
+
         ]);
     }
-    
+
     function productos(Request $request, $slug = null){
         $productos = Articulo::query();
-        
+
         if($slug == "menor-mayor"){
             $productos->orderBy("precioVenta", "asc");
         }
@@ -45,71 +45,71 @@ class SiteController extends Controller
                     $productos->where("idCategoria", $cat->id);
                 });
             }
-            
-            
+
+
         }
-        
+
         if($request->s){
             $productos->where(function($productos) use ($request){
                 $productos->orwhere("nombre", "like", "%".$request->s."%");
                 $productos->orwhere("descripcion", "like", "%".$request->s."%");
             });
         }
-        
+
         return view("website.productos",[
             "productos" => $productos->paginate(50)]);
-        
+
     }
-    
+
     function contacto(){
         return view("website.contacto");
     }
-    
+
     function carrito(){
         return view("website.carrito");
     }
-    
+
     function detalleProducto($slug, Articulo $articulo){
         return view("website.detalleProducto",["articulo" => $articulo]);
     }
-    
+
     function pedido(){
         return view("website.pedido");
     }
-    
+
     function registro(){
         return view("website.registro");
     }
-    
+
     function recuperarContrasena(){
         return view("website.recuperarContraseña");
     }
-    
+
     function detallePedido(Pedido $pedido){
         return view("website.detallePedido",[
             "pedido" => $pedido
         ]);
     }
-    
+
     function formulario(){
         return view("website.formulario");
     }
-    
+
     function misPedidos(){
         $pedidos = Pedido::where("idCliente", Cliente::getUser()->id)->get();
         return view("website.misPedidos",[
             "pedidos" => $pedidos
         ]);
     }
-    
+
     function inicioSesionAdmin(){
         return view("website.inicioSesionAdmin");
     }
-    
+
     function homeAdmin(){
         return view("website.homeAdmin");
     }
-    
+
     function graficas(){
         return view("website.graficas");
     }
@@ -117,19 +117,19 @@ class SiteController extends Controller
     function editarAdmin(){
         return view("website.editarAdmin");
     }
-    
+
     function AdminPedidos(){
         return view("website.AdminPedidos");
     }
-    
+
     function ejemploPedidoASurtir(){
         return view("website.ejemploPedidoASurtir");
     }
-    
-    
-    
+
+
+
     // Registro
-    
+
     public function postClienteRegistro(Request $request){
 
         DB::beginTransaction();
@@ -145,7 +145,7 @@ class SiteController extends Controller
                 $user = new Cliente();
                 $user->nombre = $request->nombre;
                 $user->apellidos = $request->apellidoP ." ".$request->apellidoM;
-                $user->correo = $request->correo;               
+                $user->correo = $request->correo;
                 $user->contrasena = Hash::make($request->contrasena);
                 $user->save();
 //cantidades de los carritos
@@ -168,9 +168,9 @@ class SiteController extends Controller
         }
 
         DB::commit();
-        
+
         session()->put("usuario_id", $user->id);
-     
+
 
 //para mandar correos
     /*    Mail::to($user->email)
@@ -195,10 +195,10 @@ class SiteController extends Controller
                     $exist = false;
 
                     foreach (Carrito::where('idCliente', $user->id)->get() as $productUser){
-                        
+
                         if($productSession->idArticulo == $productUser->idArticulo){
                             $cantidad = $productUser->cantidad;
-                           
+
 
                             if($cantidad > $productUser->unidadInvent){
                                 Carrito::where('id', $productUser->id)
@@ -224,11 +224,11 @@ class SiteController extends Controller
 
                 }
 
-               
+
 ;
-              
+
              session()->put("usuario_id", $user->id);
-                
+
 
                 return ["success" => true, "message" => "El inicio fue exitoso"];
             }
@@ -247,14 +247,14 @@ class SiteController extends Controller
 
         return redirect('/');
     }
-    
-    
-    
+
+
+
     public function postAgregarProductoCarrito(Request $request){
         $producto = Articulo::find($request->get('idArticulo'));
 
         $cart = Carrito::myCart()->where('idArticulo', $producto->id)->first();
-        
+
 
         DB::beginTransaction();
         try{
@@ -273,7 +273,7 @@ class SiteController extends Controller
                 }
                 $cart->idSesion = session()->getId();
                 $cart->idArticulo = $producto->id;
-            
+
                 if($request->get("cantidad") == null || $request->get("cantidad") < 1){
                     $cart->cantidad = 1;
                 }
@@ -295,8 +295,8 @@ class SiteController extends Controller
         return ["success" => true, "message" => "El producto se agregó al carrito"];
 
     }
-    
-    
+
+
     public function postFinalizarCompra(Request $request){
 
         if(Carrito::myCart()->count() < 1){
@@ -312,7 +312,7 @@ class SiteController extends Controller
             'apellidoP' => 'required',
             'apellidoM' => 'required',
             'calle' => 'required',
-            'numExt' => 'required',            
+            'numExt' => 'required',
             'colonia' => 'required',
             'codigoPostal' => 'required',
             'ciudad' => 'required',
@@ -322,12 +322,12 @@ class SiteController extends Controller
             'llamadaConfirmacion' => 'required',
             'direccionPrincipal' => 'required',
             'tipoPago' => 'required',
-            
+
 //            'conekta_token' => 'sometimes',
 //            'conekta_cardholder' => 'required_with:conekta_token',
 //            'conekta_phone' => 'required_with:conekta_token'
         ], [
-          
+
             'domicilio.required' => "Se requiere proporcione el domicilio",
             'ciudad.required' => "Se requiere la ciudad",
 //            'municipio.required' => __("messages.state_required"),
@@ -344,7 +344,7 @@ class SiteController extends Controller
                 return ['success' => false, 'message' => $error];
             }
         }
-        
+
         DB::beginTransaction();
 
         try {
@@ -355,7 +355,7 @@ class SiteController extends Controller
             $redirectTo = '/detalle/compra-' . $pedido->id;
             $url = false;
             $detalle_compra = '/detalle/compra-';
-            
+
             $ficha = '';
             if($request->get('forma_pago') == 'paypal'){
 
@@ -371,7 +371,7 @@ class SiteController extends Controller
 
             return ['success' => true, 'url' => $url, 'redirect_to' => $redirectTo, 'detalle_compra' => $pedido];
 
-           
+
         }catch (\Exception $e){
             DB::rollback();
             $message = 'Unexpected error';
@@ -385,5 +385,5 @@ class SiteController extends Controller
     }
 
 
-    
+
 }

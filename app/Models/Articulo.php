@@ -10,7 +10,9 @@ class Articulo extends Model
     public function articuloCategorias(){
         return $this->hasMany(ArticuloCategoria::class, "idArticulo", "id");
     }
-    
+
     use SoftDeletes;
     protected $table = "articulos";
+
+    protected $fillable = ['nombre'];
 }

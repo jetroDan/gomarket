@@ -19,7 +19,7 @@ Route::model('pedido', \App\Models\Pedido::class);
 Route::group(['prefix'=>'admin', "namespace" => "admin"], function(){
     Route::get('/', 'SiteController@index');
     Route::get('/iniciar-sesion', 'SiteController@login');
-    
+
 });
 
 Route::group(["namespace" => "website"], function(){
@@ -33,9 +33,9 @@ Route::group(["namespace" => "website"], function(){
     Route::get('/pedido', 'SiteController@pedido');
     Route::get('/registro', 'SiteController@registro');
     Route::get('/recuperarContrasena', 'SiteController@recuperarContrasena');
-    
+
     Route::get('/formulario', 'SiteController@formulario');
-    
+
     Route::get("/cerrar-sesion", "SiteController@cerrarSesion");
     Route::get("/misPedidos", "SiteController@misPedidos");
     Route::get('/inicioSesionAdmin', 'SiteController@inicioSesionAdmin');
@@ -44,13 +44,13 @@ Route::group(["namespace" => "website"], function(){
     Route::get('/editarAdmin', 'SiteController@editarAdmin');
     Route::get('/AdminPedidos', 'SiteController@AdminPedidos');
     Route::get('/ejemploPedidoASurtir', 'SiteController@ejemploPedidoASurtir');
-    
+
     //De tipo post
     Route::post('/iniciarSesion/cliente', 'SiteController@iniciarSesion');
     Route::post('/registrar/cliente', 'SiteController@postClienteRegistro');
     Route::post('/agregar/articulo', 'SiteController@postAgregarProductoCarrito');
     Route::post('/finalizar/compra', 'SiteController@postFinalizarCompra');
-    
-    
-    
+
+
+
 });
